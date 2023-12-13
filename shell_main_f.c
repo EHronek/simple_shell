@@ -1,0 +1,42 @@
+#include "shell.h"
+/**
+  * main - main entry point
+  * @argv: it is the argument vector
+  * @argc: it is the argument count
+  *
+  * Return: always return 0
+  */
+int main(int argc, char *argv[])
+{
+	char *input_buffer;
+	char **string_array, buff;
+	int counter = 0;
+
+	(void)argc;
+	while(1)
+	{
+		if (isatty(STDIN_FILENO))
+		{
+			write(STDOUT_FILENO, "$ ", 2);
+		}
+		input_buffer = __getline();/* coming back to try with unistd*/
+		buff = input_buffer[0]; /*checking if input starts with '\0' */
+		if (buff == '\0')
+			continue;
+		string_array = parser(input_buffer);/* for tokenization*/
+		if (checking_cmd(string_array[0]) == 0)
+		{
+			exec_builtin(string_array, counter, argv[0]);
+			free(string_array);
+			free(input_buffer);
+			string_array = NULL;
+			input_buffer = NULL;
+			continue;
+		}
+		else
+			execute(string_array, counter, argv, buff);
+		free(string_array);
+		free(input_buffer);
+	}
+	return (0);
+}
