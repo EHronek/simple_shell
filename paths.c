@@ -30,7 +30,7 @@ void find_path(char **command)
 /**
   * building - it is the building command
   * @toks: it is the executable input command
-  * @dir: the directory containing the command
+  * @val: the directory containing the command
   * Return: it should return full path of cmd, NULL (on failure)
   */
 char *building(char *toks, char *val)
