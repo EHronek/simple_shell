@@ -1,4 +1,4 @@
-#include "main.h"
+#include "shell.h"
 /**
   * _atoi - converts string to integer
   * @s: pointer argument

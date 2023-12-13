@@ -9,7 +9,8 @@
 int main(int argc, char *argv[])
 {
 	char *input_buffer;
-	char **string_array, buff;
+	char **string_array;
+	char buff;
 	int counter = 0;
 
 	(void)argc;
@@ -26,7 +27,7 @@ int main(int argc, char *argv[])
 		string_array = parser(input_buffer);/* for tokenization*/
 		if (checking_cmd(string_array[0]) == 0)
 		{
-			exec_builtin(string_array, counter, argv[0]);
+			builtin_executor(string_array, counter, argv[0]);
 			free(string_array);
 			free(input_buffer);
 			string_array = NULL;
@@ -34,7 +35,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 		else
-			executor(string_array, counter, argv, buff);
+			executor(string_array, counter, argv, input_buffer);
 		free(string_array);
 		free(input_buffer);
 	}

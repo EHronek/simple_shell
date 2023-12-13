@@ -10,6 +10,9 @@ void find_path(char **command)
 	char *t_path;
 	char *command_path;
 	struct stat buff;
+
+	t_path = _getenv("PATH");
+	sep = strtok(t_path, ":");
 	while (sep != NULL)
 	{
 		command_path = building(*command, sep);
@@ -57,7 +60,7 @@ char *_getenv(char *env_name)
 	nil = _strlen(env_name);
 	for (i = 0; environ[i]; i++)
 	{
-		if (_strncmp(env_name, environ[i]) == 0)
+		if (_strncmp(env_name, environ[i], nil) == 0)
 		{
 			vil = _strlen(environ[i]) - nil;
 			vall = malloc(sizeof(char) * vil);

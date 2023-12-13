@@ -3,6 +3,7 @@
 
 #include <stdio.h>
 #include <stddef.h>
+#include <stddef.h>
 #include <stdlib.h>
 #include <unistd.h>
 #define CMD_LENGTH 100
@@ -37,6 +38,8 @@ char *_strcat(char *dest, char *src);
 int _strcmp(char *s1, char *s2);
 char *_strstr(char *haystack, char *needle);
 int _strlen(char *string);
+int _strlen(char *string);
+int _strncmp(const char *st1, const char *st2, size_t n);
 int _atoi(char *s);
 char *_itoa(unsigned int n);
 char *_memset(char *s, char b, unsigned int n);
@@ -45,7 +48,7 @@ int ___exit(char **i_cmd, int counts, char *argv);
 int ___env(char **cmd, int counts, char *argv);
 int ___clear(char **i_cmd, int counts, char *argv);
 int _isdigit(char c);
-int checking_cmd(const char *cmd_input);
+int checking_cmd(char *cmd_input);
 void executor(char **cmd_array, int cmd_count, char **argv, char     *buffer);
 void printERR(int count, char *cmd, char *argv);
 char *__getline();
@@ -55,4 +58,5 @@ char *building(char *toks, char *dir);
 char *_getenv(char *env_name);
 int builtin_executor(char **command, int counts, char *argv);
 void shell_prompt(void);
+void hash_handler(char *the_buffer);
 #endif

@@ -28,9 +28,9 @@ int ___exit(char **i_cmd, int counts, char *argv)
 			s_ptr = _itoa(counts);
 			write(2, s_ptr, _strlen(s_ptr));
 			write(2, ": ", 2);
-			write(2, s_cmd[0], _strlen(s_cmd[0]));
+			write(2, i_cmd[0], _strlen(i_cmd[0]));
 			write(2, ": Illegal number: ", 18);
-			write(2, s_cmd[1], _strlen(s_cmd[1]));
+			write(2, i_cmd[1], _strlen(i_cmd[1]));
 			write(2, "\n", 1);
 			return (-1);
 		}

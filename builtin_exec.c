@@ -18,7 +18,7 @@ int builtin_executor(char **command, int counts, char *argv)
 	while ((select + i)->command)
 	{
 		if (_strcmp((select + i)->command, command[0]) == 0)
-			return ((select + i)->func_ptr(command, counter, argv));
+			return ((select + i)->func_ptr(command, counts, argv));
 		i++;
 	}
 	return (-1);
