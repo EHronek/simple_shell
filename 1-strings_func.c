@@ -3,7 +3,7 @@
   * @string: the string to dunplicate
   * Return: returns a pointer to the duplicated string
   */
-CHAR *_strdup(char *string)
+char *_strdup(char *string)
 {
 	char *dup;
 	size_t i = 0;

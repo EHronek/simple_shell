@@ -13,10 +13,10 @@ void find_path(char **command)
 	while (sep != NULL)
 	{
 		command_path = building(*command, sep);
-		if (stat(command_path, &buffer) == 0)
+		if (stat(command_path, &buff) == 0)
 		{
 			*command = _strdup(command_path);
-			free(command_path)
+			free(command_path);
 				break;
 		}
 		free(command_path);
@@ -63,7 +63,7 @@ char *_getenv(char *env_name)
 			vall = malloc(sizeof(char) * vil);
 			if (!vall)
 			{
-				free(vil);
+				free(vall);
 				perror("unable to do allocation of memory");
 				return(NULL);
 			}
@@ -72,7 +72,7 @@ char *_getenv(char *env_name)
 			{
 				vall[0] = environ[i][x];
 			}
-			vall[j] = '\0';
+			vall[y] = '\0';
 			return (vall);
 		}
 	}

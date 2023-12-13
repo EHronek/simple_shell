@@ -34,7 +34,7 @@ int main(int argc, char *argv[])
 			continue;
 		}
 		else
-			execute(string_array, counter, argv, buff);
+			executor(string_array, counter, argv, buff);
 		free(string_array);
 		free(input_buffer);
 	}

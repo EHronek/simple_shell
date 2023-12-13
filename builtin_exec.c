@@ -19,7 +19,6 @@ int builtin_executor(char **command, int counts, char *argv)
 	{
 		if (_strcmp((select + i)->command, command[0]) == 0)
 			return ((select + i)->func_ptr(command, counter, argv));
-#include <stdbool.h>
 		i++;
 	}
 	return (-1);

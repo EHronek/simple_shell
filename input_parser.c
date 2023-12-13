@@ -13,7 +13,7 @@ char **parser(char *input_buff)
 	
 	if (input_buff == NULL)
 		return (NULL);
-	token = strtok(buff, " \n");
+	token = strtok(input_buff, " \n");
 	if (token == NULL)
 		return (NULL);
 
