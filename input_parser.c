@@ -1,7 +1,7 @@
 #include "shell.h"
 /**
   * parser - this function parses the commmand input for tokenization
-  * @input_buffer: string containing the command input
+  * @input_buff: string containing the command input
   *
   * Return: return parsed command
   */
@@ -10,7 +10,7 @@ char **parser(char *input_buff)
 	char **cmd_input;
 	char *token;
 	int i = 0;
-	
+
 	if (input_buff == NULL)
 		return (NULL);
 	token = strtok(input_buff, " \n");

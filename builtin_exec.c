@@ -4,7 +4,7 @@
   * @command: command to execute
   * @counts: cmd nums
   * @argv: arguments vector
-  *
+  * Return: 0 (success), -1 on failure
   */
 int builtin_executor(char **command, int counts, char *argv)
 {

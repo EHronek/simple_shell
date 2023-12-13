@@ -14,7 +14,7 @@ int main(int argc, char *argv[])
 	int counter = 0;
 
 	(void)argc;
-	while(1)
+	while (1)
 	{
 		if (isatty(STDIN_FILENO))
 		{

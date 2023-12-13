@@ -1,10 +1,10 @@
 #include "shell.h"
 /**
   * __getline - this function is to read user input from the stdin
-  * 
+  *
   * Return: it should return the input read from the stdin
   */
-char *__getline()
+char *__getline(void)
 {
 	int bf_size = 1024;
 	int i;
@@ -47,7 +47,7 @@ char *__getline()
 }
 /**
   * hash_handler - it should assume and delete everything after #
-  * @buffer: theinput
+  * @the_buffer: theinput cmd
   *
   * Return: it returns nothing(void)
   */

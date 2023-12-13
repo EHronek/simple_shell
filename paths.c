@@ -25,7 +25,7 @@ void find_path(char **command)
 		free(command_path);
 		sep = strtok(NULL, ":");
 	}
-	free (t_path);
+	free(t_path);
 }
 /**
   * building - it is the building command
@@ -41,14 +41,14 @@ char *building(char *toks, char *dir)
 	len = _strlen(dir) + _strlen(toks) + 2;
 	command =  malloc(sizeof(char) * len);
 	if (command == NULL)
-		return(NULL);
+		return (NULL);
 	memset(command, 0, len);
 	return (command);
 }
 /**
   * _getenv - this func gets value of environ varible by name
   * @env_name: it is the name of the environment variable
-  * 
+  *
   * Return: it returns the value of the environment variable, else NULL
   */
 char *_getenv(char *env_name)
@@ -68,7 +68,7 @@ char *_getenv(char *env_name)
 			{
 				free(vall);
 				perror("unable to do allocation of memory");
-				return(NULL);
+				return (NULL);
 			}
 			y = 0;
 			for (x = nil + 1; environ[i][x]; x++, y++)

@@ -2,11 +2,11 @@
 /**
   * executor - this function executes the cmds within shell
   * @cmd_array: the parsed commands
-  * @cmd_num: the number of commands parsed
+  * @cmd_num: the number of commands parsed count
   * @argv: command line argumemnts parsed with command
   * @buffer: its the buffer containing input
   */
-void executor(char **cmd_array, int cmd_count, char **argv, char *buffer)
+void executor(char **cmd_array, int cmd_num, char **argv, char *buffer)
 {
 	int wstat;
 
@@ -22,7 +22,7 @@ void executor(char **cmd_array, int cmd_count, char **argv, char *buffer)
 		}
 		if (execve(*cmd_array, cmd_array, environ) == -1)
 		{
-			printERR(cmd_count, cmd_array[0], argv[0]);
+			printERR(cmd_num, cmd_array[0], argv[0]);
 			free(cmd_array);
 			free(buffer);
 			exit(EXIT_FAILURE);

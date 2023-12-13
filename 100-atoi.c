@@ -32,7 +32,7 @@ int _atoi(char *s)
   */
 char *_itoa(unsigned int n)
 {
-	int len = 0; 
+	int len = 0;
 	int a = 0;
 	int num;
 	char *c;

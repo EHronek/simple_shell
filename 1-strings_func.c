@@ -33,7 +33,7 @@ int _strlen(char *string)
 {
 	int s_length = 0;
 
-	while(*string)
+	while (*string)
 	{
 		s_length++;
 	}
@@ -49,7 +49,7 @@ int _strlen(char *string)
 int _strncmp(const char *st1, const char *st2, size_t n)
 {
 	size_t i;
-	
+
 	if (st1 == NULL)
 		return (-1);
 	for (i = 0; i < n && st2[i]; i++)
@@ -61,4 +61,3 @@ int _strncmp(const char *st1, const char *st2, size_t n)
 	}
 	return (0);
 }
-  

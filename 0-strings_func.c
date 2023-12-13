@@ -1,7 +1,7 @@
 #include "shell.h"
 #include <stddef.h>
 /**
-  * _strcpy - copies string
+  * *_strcpy - copies string
   * @dest: the destination to copy
   * @src: a pointer to the source string
   * Return: returns a pointer to the destination string
@@ -20,11 +20,11 @@ char *_strcpy(char *dest, char *src)
 	return (origin_dest);
 }
 /**
- * _strncpy - copies a string
+ * *_strncpy - copies a string
  * @dest: destination pointer argument
  * @src: src pointer argument
  * @n: number of bytes to be copied
- * return: A pointer to the destination string
+ * Return: A pointer to the destination string
  */
 char *_strncpy(char *dest, char *src, int n)
 {
@@ -59,7 +59,7 @@ char *_strcat(char *dest, char *src)
 		i++;
 	}
 	dest[d_length + i] = '\0';
-	return dest;
+	return (dest);
 }
 /**
   * _strcmp - function that compares two  strings
@@ -88,7 +88,7 @@ char *_strstr(char *haystack, char *needle)
 	{
 		char *hay = haystack;
 		char *ned = needle;
-		
+
 		while (*hay && *ned && *hay == *ned)
 		{
 			hay++;
