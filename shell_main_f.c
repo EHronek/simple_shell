@@ -6,11 +6,11 @@
   *
   * Return: always return 0
   */
-int main(int argc, char *argv[])
+int main(int argc, char **argv)
 {
 	char *input_buffer;
 	char **string_array;
-	char buff;
+	char b;
 	int counter = 0;
 
 	(void)argc;
@@ -18,11 +18,11 @@ int main(int argc, char *argv[])
 	{
 		if (isatty(STDIN_FILENO))
 		{
-			write(STDOUT_FILENO, "$ ", 2);
+			write(1, "$ ", 2);
 		}
 		input_buffer = __getline();/* coming back to try with unistd*/
-		buff = input_buffer[0]; /*checking if input starts with '\0' */
-		if (buff == '\0')
+		b = input_buffer[0]; /*checking if input starts with '\0' */
+		if (b == '\0')
 			continue;
 		string_array = parser(input_buffer);/* for tokenization*/
 		if (checking_cmd(string_array[0]) == 0)

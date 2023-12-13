@@ -16,10 +16,8 @@ void executor(char **cmd_array, int cmd_num, char **argv, char *buffer)
 	}
 	else
 	{
-		if (_strncmp(cmd_array[0], "./", 2) != 0 && _strncmp(cmd_array[0], "/", 1))
-		{
+		if (_strncmp(cmd_array[0], "./", 2) != 0 && _strncmp(cmd_array[0], "/", 1) != 0)
 			find_path(&cmd_array[0]);
-		}
 		if (execve(*cmd_array, cmd_array, environ) == -1)
 		{
 			printERR(cmd_num, cmd_array[0], argv[0]);

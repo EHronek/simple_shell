@@ -4,7 +4,7 @@
   *
   * Return: it should return the input read from the stdin
   */
-char *__getline(void)
+char *__getline()
 {
 	int bf_size = 1024;
 	int i;

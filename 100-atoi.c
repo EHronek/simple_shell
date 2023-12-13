@@ -92,12 +92,10 @@ char *_memset(char *s, char b, unsigned int n)
 char *_memcpy(char *dest, char *src, unsigned int n)
 {
 	unsigned int i = 0;
-	unsigned char *destination = (unsigned char *) dest;
-	const unsigned char *source = (const unsigned char *)src;
 
 	for (i = 0; i < n; i++)
 	{
-		destination[i] = source[i];
+		dest[i] = src[i];
 	}
 	return (dest);
 }

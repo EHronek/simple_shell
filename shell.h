@@ -1,5 +1,5 @@
-#ifndef _SHELL_H_
-#define _SHELL_H_
+#ifndef SHELL_H
+#define SHELL_H
 
 #include <stdio.h>
 #include <stddef.h>
@@ -22,7 +22,7 @@ extern char **environ;
 typedef struct builtin_cmd
 {
 	char *command;
-	int (*func_ptr)(char **cmd, int counter, char *argv);
+	int (*func)(char **cmd, int counter, char *argv);
 } builtins;
 
 

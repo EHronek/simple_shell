@@ -69,12 +69,15 @@ char *_strcat(char *dest, char *src)
   */
 int _strcmp(char *s1, char *s2)
 {
-	while (*s1 != '\0' && *s1 == *s2)
+	int i = 0;
+
+	while (s1[i] == s2[i])
 	{
-		s1++;
-		s2++;
+		if (s1[i] == '\0')
+			return (0);
+		i++;
 	}
-	return ((unsigned char)(*s1) - (unsigned char)(*s2));
+	return (s1[i] - s2[i]);
 }
 /**
   * _strstr - locates a substring in the given string

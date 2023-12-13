@@ -7,8 +7,8 @@
 char *_strdup(char *string)
 {
 	char *dup;
-	int i = 0;
-	int len = 0;
+	size_t i = 0;
+	size_t len = 0;
 
 	len = _strlen(string);
 	dup = malloc(sizeof(char) * (len + 1));
@@ -31,13 +31,13 @@ char *_strdup(char *string)
  */
 int _strlen(char *string)
 {
-	int s_length = 0;
+	int i = 0;
 
-	while (*string)
+	for (i = 0; *string != '\0'; string++)
 	{
-		s_length++;
+		i++;
 	}
-	return (s_length);
+	return (i);
 }
 /**
   * _strncmp - compares the amount of n chars in the both strings

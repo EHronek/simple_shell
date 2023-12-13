@@ -6,16 +6,16 @@
   */
 void find_path(char **command)
 {
-	char *sep;
+	char *val;
 	char *t_path;
 	char *command_path;
 	struct stat buff;
 
 	t_path = _getenv("PATH");
-	sep = strtok(t_path, ":");
-	while (sep != NULL)
+	val = strtok(t_path, ":");
+	while (val != NULL)
 	{
-		command_path = building(*command, sep);
+		command_path = building(*command, val);
 		if (stat(command_path, &buff) == 0)
 		{
 			*command = _strdup(command_path);
@@ -23,7 +23,7 @@ void find_path(char **command)
 				break;
 		}
 		free(command_path);
-		sep = strtok(NULL, ":");
+		val = strtok(NULL, ":");
 	}
 	free(t_path);
 }
@@ -33,16 +33,19 @@ void find_path(char **command)
   * @dir: the directory containing the command
   * Return: it should return full path of cmd, NULL (on failure)
   */
-char *building(char *toks, char *dir)
+char *building(char *toks, char *val)
 {
 	char *command;
 	size_t len;
 
-	len = _strlen(dir) + _strlen(toks) + 2;
+	len = _strlen(val) + _strlen(toks) + 2;
 	command =  malloc(sizeof(char) * len);
 	if (command == NULL)
 		return (NULL);
 	memset(command, 0, len);
+	command = _strcat(command, val);
+	command = _strcat(command, "/");
+	command = _strcat(command, toks);
 	return (command);
 }
 /**
@@ -73,7 +76,7 @@ char *_getenv(char *env_name)
 			y = 0;
 			for (x = nil + 1; environ[i][x]; x++, y++)
 			{
-				vall[0] = environ[i][x];
+				vall[y] = environ[i][x];
 			}
 			vall[y] = '\0';
 			return (vall);
